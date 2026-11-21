@@ -25,7 +25,7 @@ const KPIS: {
   segments: { label: string; value: number; fill?: string }[]
 }[] = [
   {
-    label: "الوفر الشهري",
+    label: "التوفير الشهري",
     value: fmtInt(S.monthlySavings),
     unit: "ريال",
     icon: Coins,

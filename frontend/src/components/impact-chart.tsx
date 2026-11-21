@@ -29,7 +29,7 @@ type Metric = Measure | "risk"
 
 /** The unit sits next to the label (the title, a column head), so CO₂ does not repeat itself. */
 const MEASURES: Record<Measure, { label: string; unit: string; format: (n: number) => string }> = {
-  savings: { label: "الوفر", unit: "ريال/شهر", format: fmtInt },
+  savings: { label: "التوفير", unit: "ريال/شهر", format: fmtInt },
   landfill: { label: "الردم", unit: "طن/شهر", format: fmtInt },
   co2: { label: "CO₂", unit: "طن/شهر", format: (n) => fmt(n) },
 }

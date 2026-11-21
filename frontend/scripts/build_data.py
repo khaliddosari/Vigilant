@@ -75,6 +75,8 @@ def arabic_reason(text: str | None) -> str | None:
     if text is None:
         return None
     text = re.sub(r"^[A-Z]+-[\w-]+ ← [A-Z]+-[\w-]+:\s*", "", text.strip())
+    # the interface says «توفير», not the source's «وفر»
+    text = re.sub(r"(?<![\u0600-\u06FF])وفر(?![\u0600-\u06FF])", "توفير", text)
     for en, ar in CLASS_AR.items():
         text = re.sub(rf"معلنة {en}", f"معلنة «{ar}»", text)
     return text.replace("CO2", "CO₂").strip().rstrip("؛").strip()
